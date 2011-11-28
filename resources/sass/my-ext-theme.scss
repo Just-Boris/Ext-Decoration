@@ -1,0 +1,144 @@
+// Unless you want to include all components, you must set $include-default to false
+// IF you set this to true, you can also remove lines 10 to 38 of this file
+$include-default: false;
+
+// Insert your custom variables here.
+$base-color: #FFF;
+$neutral-color: #E7E7E7;
+/*******************
+ *button decoration* 
+ *******************/
+$button-default-color: #FFF;
+$button-default-base-color: #de252a !default; 
+$button-default-base-color-over: adjust-color($button-default-base-color, $hue: -6.667deg, $lightness: 10.588%) !default; //E4F3FF
+$button-default-base-color-focus: $button-default-base-color-over !default;
+$button-default-base-color-pressed: adjust-color($button-default-base-color, $hue: -0.725deg, $saturation: -9.556%, $lightness: -3.725%) !default; //B6CBE4
+$button-default-base-color-disabled: adjust-color($button-default-base-color, $hue: 0deg, $saturation: -55.556%, $lightness: 12.745%) !default; //F7F7F7
+$button-background-start: #de252a;
+$button-background-stop: #a5101c;
+$button-default-background-gradient				: color_stops($button-background-start, 	   		$button-background-stop) !default;
+$button-default-background-gradient-over		: color_stops($button-default-base-color-over, 		$button-background-stop) !default;
+$button-default-background-gradient-pressed		: color_stops($button-default-base-color-pressed, 	$button-background-stop) !default;
+$button-default-background-gradient-disabled	: color_stops($button-default-base-color-disabled,  $button-background-stop) !default;
+
+
+/***************************
+ *button group 	 decoration* 
+ ***************************/
+$btn-group-background-color: #EEE !default;
+$btn-group-header-background-color: #C2C2C2 !default;
+$btn-group-header-color: #FFF !default;
+
+
+/***************************
+ *toolbar button decoration* 
+ ***************************/
+$toolbar-separator-color: transparent;
+$toolbar-background-gradient: color_stops(#FFFFFF, #E7E7E7) !default;
+$toolbar-inner-border-width: 1px 0px 0px !default;
+$button-toolbar-base-color: #FFF;
+$button-toolbar-color-stop: #e2e2e2;
+$button-toolbar-border-color-over: #dedede;
+$button-toolbar-border-color-pressed: adjust-color($button-toolbar-border-color-over, $hue: 0.721deg, $saturation: -17.014%, $lightness: -21.765%) !default;
+
+$button-toolbar-background-color: transparent !default;
+$button-toolbar-background-color-pressed: adjust-color($button-toolbar-color-stop, $hue: -1.138deg, $saturation: -11.47%, $lightness: -10.353%) !default;
+$button-toolbar-background-color-disabled: transparent !default;
+
+$button-toolbar-background-gradient: null !default;
+$button-toolbar-background-gradient-over: color_stops($button-toolbar-base-color, $button-toolbar-color-stop)!default;
+$button-toolbar-background-gradient-focus: $button-toolbar-background-gradient-over;
+$button-toolbar-background-gradient-pressed: color_stops($button-toolbar-color-stop, $button-toolbar-background-color-pressed)!default;
+$button-toolbar-background-gradient-disabled: null !default;
+
+/*******************
+ *window decoration* 
+ *******************/
+$window-base-color	 : #f2f2f2;
+$window-body-background-color: #FFF;
+$window-header-color : #5b5850;
+//$window-border-radius: 8px 8px !default;
+
+/*******************
+ *panel  decoration* 
+ *******************/
+$panel-base-color: #FFF;
+$panel-header-background-start		: #FFF;
+$panel-header-background-stop		: #e2e2e2;
+$panel-header-background-gradient	: color_stops($panel-header-background-start, $panel-header-background-stop);
+$panel-header-color: #d12c31;
+$panel-border-width: 1px !default;
+$panel-border-color: #BFBFBF !default;
+$panel-header-border-width: 0 1px 0 0 !default;
+$panel-header-font-size: 11px !default;
+
+
+//accordion
+$accordion-header-color: #000 !default;
+$accordion-header-background-gradient: color_stops($panel-header-background-start, $panel-header-background-stop);
+$accordion-header-background-color: $panel-header-background-start !default;
+
+
+/*********************
+ *fieldset decoration*
+ *********************/
+
+$fieldset-header-color: $panel-header-color !default;
+
+/**********************
+ *textfield decoration*
+ **********************/
+//background
+$form-field-background-image: 'form/text-bg.gif' !default;
+$form-field-border-radius: 5px !default;
+
+/**********************
+ *tabbar 	decoration*
+ **********************/
+$tabbar-base-color: #cbeeff;
+$tabbar-top-body-border-width: 0 !default; 
+
+/**********************
+ *grid	 	decoration*
+ **********************/
+
+$grid-header-over-background-gradient: color_stops($panel-header-background-start, $panel-header-background-stop);
+
+@import 'ext4/default/all';
+
+// You may remove any of the following modules that you
+// do not use in order to create a smaller css file.
+@include extjs-boundlist;
+@include extjs-button;
+@include extjs-btn-group;
+@include extjs-datepicker;
+@include extjs-colorpicker;
+@include extjs-menu;
+@include extjs-grid;
+@include extjs-form;
+    @include extjs-form-field;
+    @include extjs-form-fieldset;
+    @include extjs-form-file;
+    @include extjs-form-checkboxfield;
+    @include extjs-form-checkboxgroup;
+    @include extjs-form-triggerfield;
+    @include extjs-form-htmleditor;
+@include extjs-panel;
+@include extjs-qtip;
+@include extjs-slider;
+@include extjs-progress;
+@include extjs-toolbar;
+@include extjs-window;
+@include extjs-messagebox;
+@include extjs-tabbar;
+@include extjs-tab;
+@include extjs-tree;
+@include extjs-drawcomponent;
+@include extjs-viewport;
+
+// This line changes the location of your images when creating UIs to be relative instead of within the ExtJS directory.
+// You MUST set this to true/string value if you are creating new UIs + supporting legacy browsers.
+// This only applies to new UIs. It does not apply to default component images (i.e. when changing $base-color)
+// The value can either be true, in which case the image path will be "../images/"
+// or a string, of where the path is
+$relative-image-path-for-uis: true; // defaults to "../images/" when true
